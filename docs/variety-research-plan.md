@@ -19,7 +19,7 @@ Delivered in batches of 10 plants so quality/format can be checked early.
 ## Batches
 
 - [x] **Batch 1** (existing plants 1-10): Tomato, Bell Pepper, Basil, Lettuce, Kale, Carrot, Zucchini, Cucumber, Green Bean, Spinach
-- [ ] **Batch 2** (existing plants 11-20): Broccoli, Marigold, Sunflower, Blueberry, Rosemary, Mint, Garlic, Onion, Pumpkin, Strawberry
+- [x] **Batch 2** (existing plants 11-20): Broccoli, Marigold, Sunflower, Blueberry, Rosemary, Mint, Garlic, Onion, Pumpkin, Strawberry — **Rosemary and Mint still have zero variety data** (see below)
 - [ ] **Batch 3** (new): Potato, Sweet Potato, Eggplant, Radish, Beet, Turnip, Swiss Chard, Collard Greens, Brussels Sprouts, Cauliflower
 - [ ] **Batch 4** (new): Cabbage, Kohlrabi, Celery, Asparagus, Artichoke, Okra, Sweet Corn, Snap Pea, Snow Pea, Watermelon
 - [ ] **Batch 5** (new): Cantaloupe, Honeydew Melon, Bok Choy, Arugula, Mustard Greens, Endive, Leek, Shallot, Rutabaga, Parsnip
@@ -47,3 +47,17 @@ variety entries.
   - No fabricated data was added for any gap — missing varieties are simply
     absent from the array rather than invented, consistent with the
     citation discipline in CONTRIBUTING.md.
+- **Batch 2: done for 8 of 10 plants**, with gaps:
+  - **Onion**: 19/20 varieties. Missing one long-day variety (Stuttgarter
+    was the natural pick) to round out the long-day/short-day/intermediate
+    spread.
+  - **Strawberry**: 10/20 varieties. Missing: Florida Brilliance, Sweet
+    Sensation (Darselect), Benicia, Fronteras, San Andreas, Strawberry
+    Festival, Sweet Ann, Ozark Beauty, Quinault, Eversweet.
+  - **Rosemary and Mint: 0/20 each.** The research agent assigned to this
+    pair failed entirely before producing any data — it hit an
+    account-level Claude usage "monthly spend limit" error, not the
+    per-session search quota seen elsewhere. This blocks re-running that
+    research until the limit is raised (claude.ai/settings/usage) or
+    resets, and will likely affect any future batch's agents too.
+  - As with Batch 1, no fabricated data was used to fill any gap.
