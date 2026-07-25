@@ -34,4 +34,16 @@ variety entries.
 
 ## Status
 
-- Batch 1: in progress
+- **Batch 1: done**, with two known gaps to fill in a follow-up pass (research
+  agents hit this session's WebSearch call quota partway through):
+  - **Cucumber**: 14/20 varieties. Missing: Intimidator, DMR 401, SV3462CS,
+    SV4719CS, Diamondback (all already named in cucumber's downy-mildew
+    regional note) plus one more to round out 20.
+  - **Spinach**: 9/20 varieties. Missing: Indian Summer, Giant Winter,
+    Emperor, Regiment, Reflect, Olympia, Correnta, Acadia, Avon, Catalina,
+    and others.
+  - Green Bean landed at 19/20 (one short of the LSU-recommended list:
+    Ambra, Caprice, Dusky, Lynx, Magnum, or Storm would complete it).
+  - No fabricated data was added for any gap — missing varieties are simply
+    absent from the array rather than invented, consistent with the
+    citation discipline in CONTRIBUTING.md.

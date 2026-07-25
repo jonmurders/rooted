@@ -6,6 +6,7 @@ import { getCareAdvice } from "@/lib/advice";
 import { getPlantingRecommendations } from "@/lib/planting";
 import ZoneBadge from "@/components/ZoneBadge";
 import AdviceList from "@/components/AdviceList";
+import type { SourceTier } from "@/types/plant";
 
 const statusLabel = {
   upcoming: "Upcoming",
@@ -18,6 +19,34 @@ const statusStyle = {
   active: "bg-leaf-600 text-white border-leaf-600",
   passed: "bg-soil-100 text-soil-700 border-soil-200",
 } as const;
+
+const tierLabel: Record<SourceTier, string> = {
+  "university-extension": "University/extension",
+  "seed-supplier": "Seed supplier",
+  blog: "Blog",
+  youtube: "YouTube",
+  reddit: "Reddit",
+};
+
+const tierStyle: Record<SourceTier, string> = {
+  "university-extension": "bg-leaf-600 text-white",
+  "seed-supplier": "bg-leaf-100 text-leaf-800",
+  blog: "bg-soil-100 text-soil-700",
+  youtube: "bg-soil-100 text-soil-700",
+  reddit: "bg-soil-100 text-soil-700",
+};
+
+const tierRank: Record<SourceTier, number> = {
+  "university-extension": 0,
+  "seed-supplier": 1,
+  blog: 2,
+  youtube: 3,
+  reddit: 4,
+};
+
+function bestTier(tiers: SourceTier[]): SourceTier | undefined {
+  return tiers.slice().sort((a, b) => tierRank[a] - tierRank[b])[0];
+}
 
 const dateFormatter = new Intl.DateTimeFormat("en-US", {
   month: "short",
@@ -176,6 +205,84 @@ export default function PlantDetail() {
           ))}
         </ul>
       </section>
+
+      {plant.varieties.length > 0 && (
+        <section>
+          <h2 className="font-semibold text-soil-900 mb-2">
+            Varieties ({plant.varieties.length})
+          </h2>
+          <div className="space-y-2">
+            {plant.varieties.map((variety) => {
+              const topTier = bestTier(variety.sources.map((s) => s.tier));
+              return (
+                <details
+                  key={variety.name}
+                  className="bg-white border border-leaf-200 rounded-lg p-3 text-sm group"
+                >
+                  <summary className="cursor-pointer font-medium text-soil-900 flex items-center justify-between gap-2">
+                    <span>
+                      {variety.name}
+                      {variety.daysToMaturity && (
+                        <span className="text-soil-500 font-normal">
+                          {" "}
+                          &middot; {variety.daysToMaturity.min}-
+                          {variety.daysToMaturity.max}d
+                        </span>
+                      )}
+                    </span>
+                    {topTier && (
+                      <span
+                        className={`shrink-0 text-xs px-2 py-0.5 rounded ${tierStyle[topTier]}`}
+                      >
+                        {tierLabel[topTier]}
+                      </span>
+                    )}
+                  </summary>
+                  <div className="mt-2 space-y-2 text-soil-700">
+                    <p>{variety.description}</p>
+                    <p>
+                      <span className="font-medium text-soil-900">
+                        Starting:
+                      </span>{" "}
+                      {variety.starting}
+                    </p>
+                    <p>
+                      <span className="font-medium text-soil-900">
+                        Growing:
+                      </span>{" "}
+                      {variety.growing}
+                    </p>
+                    <p>
+                      <span className="font-medium text-soil-900">
+                        Harvesting:
+                      </span>{" "}
+                      {variety.harvesting}
+                    </p>
+                    <ul className="text-xs text-soil-500 space-y-1 pt-1 border-t border-leaf-100">
+                      {variety.sources.map((source) => (
+                        <li key={source.url}>
+                          <span
+                            className={`inline-block text-xs px-1.5 py-0.5 rounded mr-1 ${tierStyle[source.tier]}`}
+                          >
+                            {tierLabel[source.tier]}
+                          </span>
+                          <a
+                            href={source.url}
+                            className="underline hover:text-leaf-700"
+                          >
+                            {source.title}
+                          </a>{" "}
+                          — {source.publisher}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </details>
+              );
+            })}
+          </div>
+        </section>
+      )}
 
       {plant.regionalNotes.length > 0 && (
         <section>
