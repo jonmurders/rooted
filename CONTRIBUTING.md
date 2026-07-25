@@ -31,12 +31,30 @@ Plants live in `src/data/plants/`, one file per plant, typed against
      plant needs extra water/shade or stops setting fruit.
    - `water.drySpellThresholdIn`: rainfall (inches) in a trailing 7-day
      window below which the app recommends watering.
+   - `sources`: citations for the plant's core data — title, publisher,
+     and URL. Prefer university/land-grant extension publications (LSU
+     AgCenter, UF/IFAS, UC ANR, Cornell Cooperative Extension, university
+     extension services generally) over blogs or seed-catalog copy. These
+     are freely reusable, research-backed, and specific about zones/climate
+     in a way generic gardening sites usually aren't.
+   - `regionalNotes`: practical adjustments for a *named climate archetype*
+     (e.g. `"Gulf South / Humid Subtropical"`, `"Cold Continental (Upper
+     Midwest)"`, `"Hot/Arid Southwest"`) rather than a formal zone — things
+     like regional variety picks, disease/pest pressure tied to humidity or
+     aridity, or a planting season that's inverted between climates (e.g.
+     strawberries are fall-planted annuals in the Gulf South/Florida but
+     spring-planted perennials in the Upper Midwest). Each note carries its
+     own `source` citation, since notes for one plant often come from
+     different publications. Don't force notes into every region — 2-4
+     genuinely differentiated notes beat six padded ones. It's fine to leave
+     this as `[]` if you don't have a sourced regional distinction to add.
 3. Add the import + entry in `src/data/plants/index.ts`.
 4. Run `npm run typecheck` — the `satisfies Plant` check in each file will
    catch missing or mistyped fields.
 
-Cite your source where you can (extension office guides, seed packets, etc.)
-in the PR description — we'd rather merge slower and be accurate.
+Every numeric claim and regional note should trace to a source in `sources`
+or a note's own `source` field — we'd rather merge slower and be accurate.
+Don't invent a citation for a fact you didn't actually verify.
 
 ## Code checks
 

@@ -176,6 +176,53 @@ export default function PlantDetail() {
           ))}
         </ul>
       </section>
+
+      {plant.regionalNotes.length > 0 && (
+        <section>
+          <h2 className="font-semibold text-soil-900 mb-2">
+            Regional notes
+          </h2>
+          <p className="text-xs text-soil-500 mb-2">
+            Climate archetypes, not formal zones — pick whichever matches
+            where you actually garden.
+          </p>
+          <ul className="space-y-3">
+            {plant.regionalNotes.map((regionalNote) => (
+              <li
+                key={regionalNote.region}
+                className="bg-white border border-leaf-200 rounded-lg p-3 text-sm"
+              >
+                <p className="font-medium text-soil-900">
+                  {regionalNote.region}
+                </p>
+                <p className="text-soil-700 mt-1">{regionalNote.note}</p>
+                <a
+                  href={regionalNote.source.url}
+                  className="text-xs text-leaf-700 underline mt-1 inline-block"
+                >
+                  {regionalNote.source.title} — {regionalNote.source.publisher}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+
+      {plant.sources.length > 0 && (
+        <section>
+          <h2 className="font-semibold text-soil-900 mb-2">Sources</h2>
+          <ul className="text-xs text-soil-500 space-y-1">
+            {plant.sources.map((source) => (
+              <li key={source.url}>
+                <a href={source.url} className="underline hover:text-leaf-700">
+                  {source.title}
+                </a>{" "}
+                — {source.publisher}
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
     </div>
   );
 }

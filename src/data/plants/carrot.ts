@@ -9,7 +9,7 @@ const carrot = {
   sun: "full-sun",
   soil: "Loose, sandy, stone-free soil for straight roots",
   spacingInches: 3,
-  daysToMaturity: { min: 60, max: 80 },
+  daysToMaturity: { min: 60, max: 90 },
   water: {
     intervalDays: 4,
     drySpellThresholdIn: 1,
@@ -39,6 +39,43 @@ const carrot = {
     "Thin seedlings early to avoid crowded, forked roots.",
     "Cold soil below 45°F slows germination dramatically.",
     "A light frost improves sweetness; roots can overwinter under mulch in mild zones.",
+    "Water stress shows up as two distinct problems: uneven watering splits roots, while insufficient water makes them bitter, tough, and misshapen.",
+  ],
+  sources: [
+    {
+      title: "Carrots",
+      publisher: "LSU AgCenter",
+      url: "https://www.lsuagcenter.com/topics/lawn_garden/home_gardening/vegetables/individual%20crops/carrots",
+    },
+  ],
+  regionalNotes: [
+    {
+      region: "Gulf South / Humid Subtropical",
+      note: "Plant mid-August through early March in three overlapping waves (Aug-Oct, Jan-Feb, and by early March) for a nearly continuous winter-harvest crop — carrots are cold-hardy enough here to be a genuine winter vegetable. Varieties: Danvers 126, Chantenay Red Core, Scarlet Nantes.",
+      source: {
+        title: "Carrots",
+        publisher: "LSU AgCenter",
+        url: "https://www.lsuagcenter.com/topics/lawn_garden/home_gardening/vegetables/individual%20crops/carrots",
+      },
+    },
+    {
+      region: "Hot/Arid Southwest",
+      note: "Planting is confined to September-December with harvest January-April — a fall/winter-only crop with no viable summer window. Water stress specifically causes root splitting here.",
+      source: {
+        title: "Water Use in Vegetables: Carrots",
+        publisher: "University of Arizona Cooperative Extension",
+        url: "https://extension.arizona.edu/sites/extension.arizona.edu/files/pubs/az1134-2014.pdf",
+      },
+    },
+    {
+      region: "Mediterranean / California",
+      note: "Carrots can be grown nearly year-round. Drip or furrow irrigation is recommended over overhead watering, both for straighter roots and to limit insect damage and sunburned shoulders.",
+      source: {
+        title: "Cultural Tips for Growing Carrot",
+        publisher: "UC Statewide IPM Program (UC ANR)",
+        url: "https://ipm.ucanr.edu/home-and-landscape/carrot/cultural-tips/",
+      },
+    },
   ],
 } satisfies Plant;
 

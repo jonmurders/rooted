@@ -23,6 +23,8 @@ const plant: Plant = {
     },
   ],
   description: "",
+  sources: [],
+  regionalNotes: [],
   careNotes: [],
 };
 

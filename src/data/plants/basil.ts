@@ -34,6 +34,42 @@ const basil = {
     "Chills below 40°F can blacken leaves even without frost.",
     "Harvest regularly — cutting encourages bushier growth.",
   ],
+  sources: [
+    {
+      title: "Basil is a warm-season herb that loves the heat",
+      publisher: "LSU AgCenter",
+      url: "https://apps.lsuagcenter.com/news_archive/2014/July/get-it-growing/Basilisawarmseasonherbthatlovestheheat.htm",
+    },
+  ],
+  regionalNotes: [
+    {
+      region: "Gulf South / Humid Subtropical",
+      note: "One of the few herbs that thrives through Louisiana's full summer heat — LSU recommends it specifically as a hot-season planting rather than a shoulder-season one.",
+      source: {
+        title: "Basil is a warm-season herb that loves the heat",
+        publisher: "LSU AgCenter",
+        url: "https://apps.lsuagcenter.com/news_archive/2014/July/get-it-growing/Basilisawarmseasonherbthatlovestheheat.htm",
+      },
+    },
+    {
+      region: "Hot/Arid Southwest",
+      note: "In desert summer heat (100°F+), an eastern exposure with morning sun and afternoon shade works better than all-day full sun; soil here is often alkaline, so amend with compost.",
+      source: {
+        title: "Growing Herbs in Tucson",
+        publisher: "University of Arizona Cooperative Extension",
+        url: "https://extension.arizona.edu/publication/growing-herbs-tucson",
+      },
+    },
+    {
+      region: "Subtropical Florida",
+      note: "Downy mildew, first reported in south Florida in 2007, is now the most devastating basil disease in the humid Southeast — plant resistant cultivars and disease-free seed rather than relying on fungicides alone.",
+      source: {
+        title: "Florida Plant Disease Management Guide: Sweet Basil",
+        publisher: "UF/IFAS EDIS",
+        url: "https://edis.ifas.ufl.edu/publication/pp113",
+      },
+    },
+  ],
 } satisfies Plant;
 
 export default basil;
