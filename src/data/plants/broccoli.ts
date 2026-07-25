@@ -77,6 +77,7 @@ const broccoli = {
       },
     },
   ],
+  varieties: [],
 } satisfies Plant;
 
 export default broccoli;

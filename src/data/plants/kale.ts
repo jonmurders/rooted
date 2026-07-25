@@ -77,6 +77,7 @@ const kale = {
       },
     },
   ],
+  varieties: [],
 } satisfies Plant;
 
 export default kale;

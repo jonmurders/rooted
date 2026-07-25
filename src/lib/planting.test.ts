@@ -25,6 +25,7 @@ const plant: Plant = {
   description: "",
   sources: [],
   regionalNotes: [],
+  varieties: [],
   careNotes: [],
 };
 

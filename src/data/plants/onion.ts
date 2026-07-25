@@ -71,6 +71,7 @@ const onion = {
       },
     },
   ],
+  varieties: [],
 } satisfies Plant;
 
 export default onion;

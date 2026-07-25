@@ -77,6 +77,7 @@ const carrot = {
       },
     },
   ],
+  varieties: [],
 } satisfies Plant;
 
 export default carrot;

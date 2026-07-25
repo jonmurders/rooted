@@ -71,6 +71,7 @@ const marigold = {
       },
     },
   ],
+  varieties: [],
 } satisfies Plant;
 
 export default marigold;

@@ -77,6 +77,7 @@ const spinach = {
       },
     },
   ],
+  varieties: [],
 } satisfies Plant;
 
 export default spinach;

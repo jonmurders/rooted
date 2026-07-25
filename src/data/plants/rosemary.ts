@@ -80,6 +80,7 @@ const rosemary = {
       },
     },
   ],
+  varieties: [],
 } satisfies Plant;
 
 export default rosemary;

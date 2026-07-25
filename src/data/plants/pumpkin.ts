@@ -62,6 +62,7 @@ const pumpkin = {
       },
     },
   ],
+  varieties: [],
 } satisfies Plant;
 
 export default pumpkin;

@@ -70,6 +70,7 @@ const bellPepper = {
       },
     },
   ],
+  varieties: [],
 } satisfies Plant;
 
 export default bellPepper;

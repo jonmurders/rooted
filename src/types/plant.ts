@@ -61,6 +61,46 @@ export interface RegionalNote {
   source: Citation;
 }
 
+/**
+ * Validity tiers for variety-level sourcing, ranked highest to lowest
+ * confidence: research-backed university/extension guidance, then
+ * commercial seed suppliers (accurate on their own product, but
+ * sales-oriented), then gardening blogs, then YouTube (practical but
+ * unverified), then Reddit (real-world anecdote, most variable quality).
+ */
+export type SourceTier =
+  | "university-extension"
+  | "seed-supplier"
+  | "blog"
+  | "youtube"
+  | "reddit";
+
+export interface VarietySource extends Citation {
+  tier: SourceTier;
+}
+
+/**
+ * A specific cultivar of a plant (e.g. "Brandywine" tomato, "Danvers 126"
+ * carrot). Fields only need to say what's different from — or more
+ * specific than — the parent Plant's own fields; they aren't a full
+ * restatement of general species care.
+ */
+export interface Variety {
+  name: string;
+  /** What distinguishes this variety — habit, flavor, disease resistance, appearance, etc. */
+  description: string;
+  /** Variety-specific days-to-maturity, when it differs meaningfully from the species-level range. */
+  daysToMaturity?: { min: number; max: number };
+  /** How to start this variety where it differs from the parent plant's general guidance. */
+  starting: string;
+  /** Variety-specific growing notes (habit, support, disease watch-outs, etc.). */
+  growing: string;
+  /** Harvest indicators and timing specific to this variety. */
+  harvesting: string;
+  /** Cited sources for this variety's claims, ideally led by the highest validity tier available. */
+  sources: VarietySource[];
+}
+
 export interface Plant {
   id: string;
   commonName: string;
@@ -81,4 +121,6 @@ export interface Plant {
   sources: Citation[];
   /** Region-specific adjustments and pitfalls beyond what zone/frost data alone captures. */
   regionalNotes: RegionalNote[];
+  /** Named cultivars of this plant. Populated progressively — see CONTRIBUTING.md. */
+  varieties: Variety[];
 }

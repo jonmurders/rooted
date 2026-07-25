@@ -70,6 +70,7 @@ const cucumber = {
       },
     },
   ],
+  varieties: [],
 } satisfies Plant;
 
 export default cucumber;

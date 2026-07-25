@@ -71,6 +71,7 @@ const sunflower = {
       },
     },
   ],
+  varieties: [],
 } satisfies Plant;
 
 export default sunflower;

@@ -76,6 +76,7 @@ const strawberry = {
       },
     },
   ],
+  varieties: [],
 } satisfies Plant;
 
 export default strawberry;

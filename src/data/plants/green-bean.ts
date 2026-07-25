@@ -71,6 +71,7 @@ const greenBean = {
       },
     },
   ],
+  varieties: [],
 } satisfies Plant;
 
 export default greenBean;

@@ -82,6 +82,7 @@ const lettuce = {
       },
     },
   ],
+  varieties: [],
 } satisfies Plant;
 
 export default lettuce;

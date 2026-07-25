@@ -70,6 +70,7 @@ const basil = {
       },
     },
   ],
+  varieties: [],
 } satisfies Plant;
 
 export default basil;

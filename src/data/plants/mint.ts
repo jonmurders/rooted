@@ -70,6 +70,7 @@ const mint = {
       },
     },
   ],
+  varieties: [],
 } satisfies Plant;
 
 export default mint;

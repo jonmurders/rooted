@@ -71,6 +71,7 @@ const zucchini = {
       },
     },
   ],
+  varieties: [],
 } satisfies Plant;
 
 export default zucchini;

@@ -71,6 +71,7 @@ const blueberry = {
       },
     },
   ],
+  varieties: [],
 } satisfies Plant;
 
 export default blueberry;

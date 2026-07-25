@@ -71,6 +71,7 @@ const garlic = {
       },
     },
   ],
+  varieties: [],
 } satisfies Plant;
 
 export default garlic;
