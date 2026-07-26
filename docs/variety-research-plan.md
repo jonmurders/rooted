@@ -20,7 +20,7 @@ Delivered in batches of 10 plants so quality/format can be checked early.
 
 - [x] **Batch 1** (existing plants 1-10): Tomato, Bell Pepper, Basil, Lettuce, Kale, Carrot, Zucchini, Cucumber, Green Bean, Spinach
 - [x] **Batch 2** (existing plants 11-20): Broccoli, Marigold, Sunflower, Blueberry, Rosemary, Mint, Garlic, Onion, Pumpkin, Strawberry
-- [ ] **Batch 3** (new): Potato, Sweet Potato, Eggplant, Radish, Beet, Turnip, Swiss Chard, Collard Greens, Brussels Sprouts, Cauliflower
+- [x] **Batch 3** (new): Potato, Sweet Potato, Eggplant, Radish, Beet, Turnip, Swiss Chard, Collard Greens, Brussels Sprouts, Cauliflower — **Sweet Potato not yet added** (see below)
 - [ ] **Batch 4** (new): Cabbage, Kohlrabi, Celery, Asparagus, Artichoke, Okra, Sweet Corn, Snap Pea, Snow Pea, Watermelon
 - [ ] **Batch 5** (new): Cantaloupe, Honeydew Melon, Bok Choy, Arugula, Mustard Greens, Endive, Leek, Shallot, Rutabaga, Parsnip
 - [ ] **Batch 6** (new): Horseradish, Watercress, Fennel, Jalapeño Pepper, Habanero Pepper, Cilantro, Parsley, Dill, Thyme, Oregano
@@ -59,3 +59,33 @@ variety entries.
     account-level Claude usage spend limit before producing any data);
     retried once the limit reset and both landed at a full 20/20.
   - As with Batch 1, no fabricated data was used to fill any gap.
+- **Batch 3: 9 of 10 plants added.** These are the first *new* plants added
+  to the app (not just varieties on existing entries), so each required
+  full core data (zones, water, temperature, planting windows, regional
+  notes) in addition to 20 varieties. Known gaps:
+  - **Sweet Potato: not added at all.** The research agent covering
+    Potato/Sweet Potato completed Potato in full (20/20, all core data)
+    but exhausted its WebSearch budget partway through Sweet Potato —
+    0/20 varieties and several core fields (spacing, water, heat
+    threshold, most regional notes) unverified. Rather than ship a
+    plant with an empty varieties array and guessed core data, Sweet
+    Potato is deferred to a follow-up pass and not yet registered in
+    `src/data/plants/index.ts`.
+  - **Turnip**: 10/20 varieties (search budget exhausted; candidate names
+    Shogoin, White Lady, Plum in Tokyo, De Milan, White Egg, Just Right,
+    Golden Ball, and Snowball were seen but never verified with real
+    content, so they were left out).
+  - **Collard Greens**: 7/20 varieties with full detail (2 more names —
+    Yellow Cabbage Collard, Whaley's Favorite — surfaced but lacked
+    verified starting/growing/harvesting detail, so were left out
+    entirely rather than shipped incomplete).
+  - **Swiss Chard**: 17/20 varieties (3 candidate names spotted but
+    unverified: Vulcan, Charlotte, Pink Lipstick).
+  - **Cauliflower**: 9/20 varieties (search budget exhausted; candidates
+    Purple of Sicily, Graffiti, Veronica, Depurple, Vitaverde, Candid
+    Charm, Symphony, Denali, Attribute, Fremont, and Amsterdam Giant
+    were identified but not verified).
+  - **Potato, Eggplant, Radish, Beet, Brussels Sprouts**: all landed at a
+    full 20/20 with complete core data.
+  - As before, no fabricated data was used anywhere — every gap above is
+    an honest "not yet verified" rather than an invented entry.
